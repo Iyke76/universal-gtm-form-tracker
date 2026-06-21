@@ -35,7 +35,7 @@ The fix in theory is simple: listen for the confirmation render. The fix in prac
 
 ### Option A: Import the GTM container (5 minutes, no code)
 
-1. Download [`universal-gtm-form-tracker.json`](GTM-PCGQDNNF_workspace10.json) from this repo
+1. Download [`universal-gtm-form-tracker.json`](./universal-gtm-form-tracker.json) from this repo
 2. In GTM: **Admin → Import Container → choose Merge → Rename Conflicting Tags**
 3. Open the variable `Const - GA4 Measurement ID` and replace the placeholder with your own GA4 Measurement ID
 4. Preview the container, submit a test form, confirm `*_form_success` lands in the dataLayer
