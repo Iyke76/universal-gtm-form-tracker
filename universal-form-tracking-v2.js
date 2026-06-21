@@ -1,3 +1,4 @@
+<script>
 /**
  * Author: Iyke Abel
  * Linkedin: https://www.linkedin.com/in/iykeabel/
@@ -830,3 +831,4 @@ function initUnbounce() {
     ? document.addEventListener('DOMContentLoaded', bootstrap)
     : bootstrap();
 })();
+</script>
