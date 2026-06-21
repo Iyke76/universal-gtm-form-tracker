@@ -1,0 +1,710 @@
+{
+    "exportFormatVersion": 2,
+    "exportTime": "2026-06-21 14:45:40",
+    "containerVersion": {
+        "path": "accounts/6207473352/containers/172127387/versions/0",
+        "accountId": "6207473352",
+        "containerId": "172127387",
+        "containerVersionId": "0",
+        "container": {
+            "path": "accounts/6207473352/containers/172127387",
+            "accountId": "6207473352",
+            "containerId": "172127387",
+            "name": "Teaching - Demo 2",
+            "publicId": "GTM-PCGQDNNF",
+            "usageContext": [
+                "WEB"
+            ],
+            "fingerprint": "1766515281900",
+            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6207473352/containers/172127387/workspaces?apiLink=container",
+            "features": {
+                "supportUserPermissions": true,
+                "supportEnvironments": true,
+                "supportWorkspaces": true,
+                "supportGtagConfigs": false,
+                "supportBuiltInVariables": true,
+                "supportClients": false,
+                "supportFolders": true,
+                "supportTags": true,
+                "supportTemplates": true,
+                "supportTriggers": true,
+                "supportVariables": true,
+                "supportVersions": true,
+                "supportZones": true,
+                "supportTransformations": false
+            },
+            "tagIds": [
+                "GTM-PCGQDNNF"
+            ]
+        },
+        "tag": [
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "tagId": "26",
+                "name": "cHTML - Set Internal Traffic",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  (function() {\n    var internal = {{URL – internal}};\n    if (internal === 'true') {\n      sessionStorage.setItem('internal_traffic', 'true');\n    }\n  })();\n</script>\n"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1766518384271",
+                "firingTriggerId": [
+                    "29"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "tagId": "30",
+                "name": "GA4 - Config",
+                "type": "googtag",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "tagId",
+                        "value": "{{Const - GA4 Measurement ID}}"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "internal_traffic"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{JS – internal traffic}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "configSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "send_page_view"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "false"
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1781705963215",
+                "firingTriggerId": [
+                    "2147479573"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "tagId": "31",
+                "name": "cHTML - Consent Init",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n  window.EC_FORM_CONSENT_CHECK = function() {\n    return { analytics: true, pii: false };  // test config\n  };\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1781704029423",
+                "firingTriggerId": [
+                    "2147479572"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "tagId": "32",
+                "name": "cHTML - Swipe/Gravity/Ghl, Unbounce Form Listener v2.0",
+                "type": "html",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "html",
+                        "value": "<script>\n/**\n * Author: Iyke Abel\n * Linkedin: https://www.linkedin.com/in/iykeabel/\n * Email: abeliyke05@gmail.com\n *\n * Universal Form Tracking — Confirmation-Render-Based (v2.0.0)\n * ============================================================\n * Supports SwipePages, Gravity Forms, GoHighLevel (inline + iframe), Unbounce\n *\n * Philosophy:\n *  - Fires on observable confirmation render (DOM-level success signal)\n *  - NOT on submit button click (counts validation failures, rage clicks)\n *  - NOT on thank-you page load (counts direct navigations, refreshes)\n *  - Failed submissions fire on real failure render only (not on every click)\n *\n * Multi-form aware: handles top/middle/footer placements independently.\n *\n * Events pushed to dataLayer (platform-specific names — by design, so each\n * platform can be triggered independently in GTM):\n *  - SwipePages    : swipe_form_success    | swipe_form_failed\n *  - Gravity Forms : gf_form_success       | gf_form_failed\n *  - GoHighLevel   : ghl_form_success      | ghl_form_failed\n *  - Unbounce      : unbounce_form_success | unbounce_form_failed\n *\n * To match across all four in a single GTM trigger, use a regex match like:\n *   ^(swipe|gf|ghl|unbounce)_form_success$\n *\n * --- PII & DATALAYER ROUTING (READ BEFORE DEPLOYING) ---\n * The event payload includes ec_email, ec_phone, ec_name, and ec_raw_fields.\n * These are intended for:\n *   (a) Server-side use — Meta Conversions API, Google Enhanced Conversions,\n *       server-side GTM — where values are hashed before leaving the browser\n *   (b) First-party CRM integrations\n *\n * DO NOT send these raw fields to GA4 via a standard GA4 Event tag —\n * GA4's Terms of Service prohibit PII in event parameters and Google can\n * disable the property. Either:\n *   1. Use server-side GTM with a SHA-256 hashing transformation, OR\n *   2. Configure GA4 Event tags in GTM to explicitly EXCLUDE the\n *      ec_email / ec_phone / ec_name / ec_raw_fields parameters\n *\n * --- CONSENT GATE ---\n * Auto-detects: Google Consent Mode v2, OneTrust, Cookiebot.\n * Override globally before this script loads:\n *\n *   window.EC_FORM_CONSENT_CHECK = function() {\n *     // Return one of:\n *     //   true                                 — full consent (event + PII)\n *     //   false                                — no consent (no event, no storage)\n *     //   { analytics: bool, pii: bool }       — granular (recommended)\n *     return { analytics: true, pii: false };\n *   };\n *\n * Behavior:\n *   analytics denied → no event, no storage\n *   pii denied       → event fires WITHOUT ec_email/ec_phone/ec_name/ec_raw_fields,\n *                      storage strips PII, ec_pii_redacted=true flag is added\n *\n * Default (no CMP detected, no override): full consent — caller is responsible.\n *\n * --- IDEMPOTENCY ---\n * Safe to load multiple times. Re-init is a no-op (logged when DEBUG=true).\n *\n * --- DEBUGGING ---\n * Set DEBUG=true (default) to see [EC]-prefixed console logs for every\n * lifecycle event. Set to false for production silent mode.\n */\n(function () {\n  'use strict';\n  // ═══════════════════════════════════════════════════════════════\n  // LOAD GUARD — prevent double-init when script is loaded twice\n  // (e.g., GTM Custom HTML + embedded copy on same page)\n  // ═══════════════════════════════════════════════════════════════\n  if (window._ec_form_tracker_loaded) {\n    if (window.console) {\n      console.log('[EC] Already initialized (v' + (window._ec_form_tracker_version || '?') + '), skipping re-init');\n    }\n    return;\n  }\n  window._ec_form_tracker_loaded = true;\n  window._ec_form_tracker_version = '2.0.0';\n\n  // ─── Config ───────────────────────────────────────────────────\n  var DEBUG          = true;            // false in production for silent mode\n  var STORAGE_KEY    = 'ec_form_data';\n  var TTL            = 10 * 60 * 1000;  // 10 min — stale data ignored\n  var SUBMIT_WINDOW  = 15 * 1000;       // 15s post-click watch window\n                                        // (bumped from 10s — accommodates slow\n                                        // networks, file uploads, CAPTCHA)\n  function log() {\n    if (DEBUG && window.console) console.log.apply(console, ['[EC]'].concat([].slice.call(arguments)));\n  }\n\n  // ═══════════════════════════════════════════════════════════════\n  // CONSENT GATE — universal, configurable\n  //\n  // Returns { analytics: bool, pii: bool }. analytics=false suppresses\n  // event firing and storage entirely. pii=false strips PII from both\n  // dataLayer pushes and storage (event still fires with metadata only).\n  //\n  // Detection priority:\n  //   1. window.EC_FORM_CONSENT_CHECK override (caller-defined)\n  //   2. Google Consent Mode v2 (window.google_tag_data.ics)\n  //   3. OneTrust (window.OnetrustActiveGroups)\n  //   4. Cookiebot (window.Cookiebot.consent)\n  //   5. Default: full consent\n  // ═══════════════════════════════════════════════════════════════\n  function getConsent() {\n    // Caller override — takes precedence over auto-detection\n    if (typeof window.EC_FORM_CONSENT_CHECK === 'function') {\n      try {\n        var r = window.EC_FORM_CONSENT_CHECK();\n        if (r === true)  return { analytics: true,  pii: true  };\n        if (r === false) return { analytics: false, pii: false };\n        if (r && typeof r === 'object') {\n          return {\n            analytics: r.analytics !== false,\n            pii: r.pii === true || r.ads === true || r.marketing === true\n          };\n        }\n      } catch (e) { log('Consent check threw:', e); }\n    }\n    // Google Consent Mode v2\n    // State codes: 1 = granted, 2 = denied, undefined = not set\n    if (window.google_tag_data && window.google_tag_data.ics &&\n        typeof window.google_tag_data.ics.getConsentState === 'function') {\n      try {\n        var adUserData = window.google_tag_data.ics.getConsentState('ad_user_data');\n        var analytics  = window.google_tag_data.ics.getConsentState('analytics_storage');\n        return {\n          analytics: analytics !== 2,           // any state except denied\n          pii: adUserData === 1                 // strictly granted\n        };\n      } catch (e) {}\n    }\n    // OneTrust — common group IDs (C0002=Performance, C0004=Targeting).\n    // Adjust group IDs in EC_FORM_CONSENT_CHECK if your OneTrust config differs.\n    if (typeof window.OnetrustActiveGroups === 'string') {\n      return {\n        analytics: window.OnetrustActiveGroups.indexOf('C0002') !== -1,\n        pii: window.OnetrustActiveGroups.indexOf('C0004') !== -1\n      };\n    }\n    // Cookiebot\n    if (window.Cookiebot && window.Cookiebot.consent) {\n      return {\n        analytics: !!window.Cookiebot.consent.statistics,\n        pii: !!window.Cookiebot.consent.marketing\n      };\n    }\n    // No CMP detected — full consent (caller is responsible for wiring one)\n    return { analytics: true, pii: true };\n  }\n\n  // ═══════════════════════════════════════════════════════════════\n  // STORAGE — persists across same-domain navigation as a backup\n  // ═══════════════════════════════════════════════════════════════\n  function persist(data) {\n    var consent = getConsent();\n    data._ts = Date.now();\n    // In-memory always retains full data for current page lifecycle.\n    // Cross-page recall uses localStorage/sessionStorage, which is gated.\n    window._ec_form_data = data;\n    if (!consent.analytics) {\n      log('Analytics consent denied — skipping storage');\n      return;\n    }\n    var toStore = data;\n    if (!consent.pii && data.fields) {\n      // Deep clone then strip PII-bearing field types from persisted copy\n      toStore = JSON.parse(JSON.stringify(data));\n      Object.keys(toStore.fields).forEach(function (k) {\n        var t = toStore.fields[k].type;\n        if (t === 'email' || t === 'tel' || t === 'text' || t === 'textarea') {\n          delete toStore.fields[k];\n        }\n      });\n      toStore._pii_redacted = true;\n    }\n    var json = JSON.stringify(toStore);\n    try { localStorage.setItem(STORAGE_KEY, json);   } catch (e) {}\n    try { sessionStorage.setItem(STORAGE_KEY, json); } catch (e) {}\n  }\n  function recall() {\n    var d = window._ec_form_data;\n    if (!d) { try { var l = localStorage.getItem(STORAGE_KEY);   if (l) d = JSON.parse(l); } catch (e) {} }\n    if (!d) { try { var s = sessionStorage.getItem(STORAGE_KEY); if (s) d = JSON.parse(s); } catch (e) {} }\n    if (d && d._ts && (Date.now() - d._ts) > TTL) { wipe(); return null; }\n    return d || null;\n  }\n  function wipe() {\n    try { localStorage.removeItem(STORAGE_KEY);   } catch (e) {}\n    try { sessionStorage.removeItem(STORAGE_KEY); } catch (e) {}\n    window._ec_form_data = null;\n  }\n  // ═══════════════════════════════════════════════════════════════\n  // PAYLOAD BUILDER — identifies PII by input TYPE, not field name.\n  // Descriptive text fields (message, company, subject, etc.) are\n  // excluded from ec_name by matching the field KEY against a regex,\n  // so they don't pollute the name even when type=\"text\".\n  // ═══════════════════════════════════════════════════════════════\n  var DESCRIPTIVE_FIELD_RE = /description|message|comment|note|project|about|bio|subject|how|details|inquiry|company|organi[sz]ation|website|url|reason|need|want|interest|budget|industry|role|title|address|city|state|country|zip|postal|referr|source|hear|question|feedback/i;\n\n  function buildPayload(data) {\n    var fields = data.fields || {};\n    var nameParts = [], ec_email = '', ec_phone = '';\n    Object.keys(fields).forEach(function (key) {\n      var f = fields[key];\n      if      (f.type === 'email')                                                              { ec_email = f.value; }\n      else if (f.type === 'tel')                                                                { ec_phone = f.value; }\n      else if (f.type === 'text' && !/^\\d+$/.test(f.value) && !DESCRIPTIVE_FIELD_RE.test(key)) { nameParts.push(f.value); }\n    });\n    return {\n      ec_name       : nameParts.join(' ').trim(),\n      ec_email      : ec_email,\n      ec_phone      : ec_phone,\n      form_url      : data.entire_url || '',\n      form_cta      : data.form_cta   || '',\n      form_platform : data.platform   || '',\n      form_position : data.position   || '',\n      form_index    : data.index      || 0,\n      ec_raw_fields : fields\n    };\n  }\n  function pushEvent(eventName, data) {\n    var consent = getConsent();\n    if (!consent.analytics) {\n      log('Analytics consent denied — skipping event:', eventName);\n      return;\n    }\n    var p = buildPayload(data);\n    p.event = eventName;\n    if (!consent.pii) {\n      delete p.ec_name;\n      delete p.ec_email;\n      delete p.ec_phone;\n      delete p.ec_raw_fields;\n      p.ec_pii_redacted = true;\n    }\n    window.dataLayer = window.dataLayer || [];\n    window.dataLayer.push(p);\n    log('->', eventName, p);\n  }\n  // ═══════════════════════════════════════════════════════════════\n  // STATE — per-form state via WeakMap (per-element fallback for old browsers)\n  // ═══════════════════════════════════════════════════════════════\n  var STATE = (typeof WeakMap !== 'undefined') ? new WeakMap() : null;\n  function getState(el)        { return STATE ? STATE.get(el) : el._ec_state; }\n  function setState(el, state) { if (STATE) STATE.set(el, state); else el._ec_state = state; }\n  // ═══════════════════════════════════════════════════════════════\n  // POSITION — top / middle / footer based on DOM order\n  // ═══════════════════════════════════════════════════════════════\n  function positionFor(idx, total) {\n    if (total <= 1)            return 'top';\n    if (idx === 0)             return 'top';\n    if (idx === total - 1)     return 'footer';\n    return 'middle';\n  }\n  // ═══════════════════════════════════════════════════════════════\n  // EVENT NAME RESOLVER\n  // ═══════════════════════════════════════════════════════════════\n  function eventName(platform, kind) {\n  var prefix = platform === 'swipepages'      ? 'swipe_form'\n             : platform === 'gravityforms'    ? 'gf_form'\n             : platform === 'unbounce'        ? 'unbounce_form'\n             : (platform === 'ghl_inline' ||\n                platform === 'ghl_iframe')    ? 'ghl_form'\n             : 'form';\n  return prefix + '_' + kind;\n}\n  // ═══════════════════════════════════════════════════════════════\n  // CONFIRMATION PAGE HANDLING\n  // ═══════════════════════════════════════════════════════════════\n  function isThankYouUrl() {\n    var url = window.location.href.toLowerCase();\n    var patterns = [\n      // English\n      'thank-you', 'thankyou', 'thank_you', '/thanks', '/ty',\n      '/confirmation', '/confirmed', '/success', '/submitted', '/complete',\n      // German\n      '/danke', '/danke-schoen', '/danke-schon',\n      // French\n      '/merci', '/succes',\n      // Spanish\n      '/gracias', '/exito',\n      // Italian\n      '/grazie',\n      // Portuguese\n      '/obrigado', '/obrigada',\n      // Dutch\n      '/bedankt',\n      // Polish\n      '/dziekuje',\n      // Swedish / Norwegian / Danish\n      '/tack', '/takk'\n    ];\n    for (var i = 0; i < patterns.length; i++) if (url.indexOf(patterns[i]) !== -1) return true;\n    return false;\n  }\n  function isGFPostbackConfirmation() {\n    return document.querySelector('.gform_confirmation_wrapper') &&\n          !document.querySelector('form[id^=\"gform_\"]');\n  }\n  function handleConfirmationPage() {\n    var stored = recall();\n    if (!stored) { log('Confirmation page: no stored data'); return; }\n    if (stored._success_fired) { log('Confirmation page: already fired on form page, skipping'); wipe(); return; }\n    pushEvent(eventName(stored.platform, 'success'), stored);\n    wipe();\n  }\n  // ═══════════════════════════════════════════════════════════════\n  // PLATFORM DETECTION\n  // ═══════════════════════════════════════════════════════════════\n  function hasSwipePages()  { return !!document.querySelector('form[action-xhr=\"https://app.swipepages.com/api/leads\"]'); }\n  function hasGravityForms(){ return !!document.querySelector('form[id^=\"gform_\"]'); }\n  function hasGHLInline()   { return !!document.querySelector('.ghl-form-wrap form'); }\n  function hasGHLIframe()   { return !!document.querySelector('iframe[src*=\"leadconnectorhq.com\"], iframe[src*=\"msgsndr.com\"], iframe[src*=\"gohighlevel.com\"]'); }\n  function hasUnbounce() {\n  var allForms = document.querySelectorAll('form');\n  for (var i = 0; i < allForms.length; i++) {\n    if (allForms[i].querySelector('.lp-pom-form-field')) return true;\n  }\n  return false;\n}\n  // ═══════════════════════════════════════════════════════════════\n  // SWIPEPAGES HANDLER\n  // ═══════════════════════════════════════════════════════════════\n  function initSwipePages() {\n    var forms = document.querySelectorAll('form[action-xhr=\"https://app.swipepages.com/api/leads\"]');\n    if (!forms.length) return false;\n    var attachedAny = false;\n    forms.forEach(function (form, idx) {\n      if (getState(form)) { attachedAny = true; return; }\n      var inputs = form.querySelectorAll('input:not([type=\"hidden\"]):not([type=\"checkbox\"]):not([type=\"submit\"])');\n      if (!inputs.length) return;\n      var state = {\n        position: positionFor(idx, forms.length),\n        index: idx + 1,\n        successFired: false,\n        failedFired: false,\n        hadInput: false\n      };\n      setState(form, state);\n      function collect() {\n        var fields = {};\n        form.querySelectorAll('input:not([type=\"hidden\"]):not([type=\"checkbox\"]):not([type=\"submit\"])').forEach(function (i) {\n          if (i.name && i.value && i.value.trim()) {\n            fields[i.name] = { value: i.value.trim(), type: i.type };\n          }\n        });\n        var urlField = form.querySelector('input[name=\"Entire_URL_sp\"]');\n        var ctaLabel = form.querySelector('.tatsu-form-primary-text');\n        return {\n          fields: fields,\n          entire_url: urlField ? urlField.value : window.location.href,\n          form_cta: ctaLabel ? ctaLabel.textContent.trim() : '',\n          platform: 'swipepages',\n          position: state.position,\n          index: state.index\n        };\n      }\n      inputs.forEach(function (input) {\n        ['input', 'blur', 'change'].forEach(function (ev) {\n          input.addEventListener(ev, function () {\n            var d = collect();\n            if (Object.keys(d.fields).length) { state.hadInput = true; persist(d); }\n          });\n        });\n      });\n      new MutationObserver(function (mutations) {\n        mutations.forEach(function (m) {\n          if (m.type !== 'attributes' || m.attributeName !== 'class') return;\n          if (!state.successFired && form.classList.contains('amp-form-submit-success')) {\n            state.successFired = true;\n            var d = collect();\n            if (Object.keys(d.fields).length) {\n              d._success_fired = true;\n              persist(d);\n              pushEvent('swipe_form_success', d);\n            }\n          }\n          if (!state.failedFired && form.classList.contains('amp-form-submit-error') && state.hadInput) {\n            state.failedFired = true;\n            pushEvent('swipe_form_failed', collect());\n          }\n        });\n      }).observe(form, { attributes: true, attributeNames: ['class'] });\n      new MutationObserver(function () {\n        if (state.failedFired || state.successFired || !state.hadInput) return;\n        var w1 = form.querySelector('.tatsu-form-single-wraning');\n        var w2 = form.querySelector('.tatsu-form-terms-wraning');\n        var visible = function (el) { return el && el.offsetParent !== null; };\n        if (visible(w1) || visible(w2)) {\n          state.failedFired = true;\n          pushEvent('swipe_form_failed', collect());\n        }\n      }).observe(form, { childList: true, subtree: true, attributes: true });\n      attachedAny = true;\n    });\n    if (attachedAny) log('SwipePages:', forms.length, 'form(s) attached');\n    return attachedAny;\n  }\n  // ═══════════════════════════════════════════════════════════════\n  // GRAVITY FORMS HANDLER\n  // ═══════════════════════════════════════════════════════════════\n  function initGravityForms() {\n    var forms = document.querySelectorAll('form[id^=\"gform_\"]');\n    if (!forms.length) return false;\n    var attachedAny = false;\n    forms.forEach(function (form, idx) {\n      if (getState(form)) { attachedAny = true; return; }\n      var inputs = form.querySelectorAll('input:not([type=\"hidden\"]):not([type=\"submit\"]):not([autocomplete=\"new-password\"]), select, textarea');\n      if (!inputs.length) return;\n      var state = {\n        position: positionFor(idx, forms.length),\n        index: idx + 1,\n        successFired: false,\n        failedFired: false,\n        hadInput: false\n      };\n      setState(form, state);\n      function collect() {\n        var fields = {};\n        form.querySelectorAll('input:not([type=\"hidden\"]):not([type=\"submit\"]):not([autocomplete=\"new-password\"])').forEach(function (i) {\n          if (i.closest('.gform_validation_container')) return;\n          if (i.name && i.value && i.value.trim()) fields[i.name] = { value: i.value.trim(), type: i.type };\n        });\n        form.querySelectorAll('select').forEach(function (s) {\n          if (s.name && s.value && s.value.trim()) fields[s.name] = { value: s.value.trim(), type: 'select' };\n        });\n        form.querySelectorAll('textarea').forEach(function (t) {\n          if (t.name && t.value && t.value.trim()) fields[t.name] = { value: t.value.trim(), type: 'textarea' };\n        });\n        var btn = form.querySelector('input[type=\"submit\"]');\n        return {\n          fields: fields,\n          entire_url: window.location.href,\n          form_cta: btn ? btn.value : '',\n          platform: 'gravityforms',\n          position: state.position,\n          index: state.index\n        };\n      }\n      inputs.forEach(function (input) {\n        ['input', 'blur', 'change'].forEach(function (ev) {\n          input.addEventListener(ev, function () {\n            var d = collect();\n            if (Object.keys(d.fields).length) { state.hadInput = true; persist(d); }\n          });\n        });\n      });\n      document.addEventListener('gform_confirmation_loaded', function () {\n        if (state.successFired) return;\n        state.successFired = true;\n        var d = collect();\n        if (Object.keys(d.fields).length || recall()) {\n          var data = Object.keys(d.fields).length ? d : recall();\n          if (data) { data._success_fired = true; persist(data); pushEvent('gf_form_success', data); }\n        }\n      });\n      new MutationObserver(function () {\n        if (state.successFired) return;\n        if (document.querySelector('.gform_confirmation_wrapper')) {\n          state.successFired = true;\n          var stored = recall() || collect();\n          if (stored) { stored._success_fired = true; persist(stored); pushEvent('gf_form_success', stored); }\n        }\n      }).observe(document.body, { childList: true, subtree: true });\n      new MutationObserver(function () {\n        if (state.failedFired || state.successFired || !state.hadInput) return;\n        if (form.classList.contains('gform_validation_error') || form.querySelector('.validation_message:not(:empty)')) {\n          state.failedFired = true;\n          pushEvent('gf_form_failed', collect());\n        }\n      }).observe(form, { childList: true, subtree: true, attributes: true, attributeFilter: ['class'] });\n      attachedAny = true;\n    });\n    if (attachedAny) log('GravityForms:', forms.length, 'form(s) attached');\n    return attachedAny;\n  }\n  // ═══════════════════════════════════════════════════════════════\n  // GHL INLINE HANDLER\n  // ═══════════════════════════════════════════════════════════════\n  function initGHLInline() {\n    var forms = document.querySelectorAll('.ghl-form-wrap form');\n    if (!forms.length) return false;\n    var attachedAny = false;\n    forms.forEach(function (form, idx) {\n      if (getState(form)) { attachedAny = true; return; }\n      var wrap = form.closest('.ghl-form-wrap');\n      var inputs = form.querySelectorAll('input:not([type=\"hidden\"]):not([type=\"submit\"]), textarea, select');\n      if (!inputs.length) return;\n      var state = {\n        position: positionFor(idx, forms.length),\n        index: idx + 1,\n        successFired: false,\n        failedFired: false,\n        submitAt: 0,\n        hadInput: false\n      };\n      setState(form, state);\n      function collect() {\n        var fields = {};\n        form.querySelectorAll('input:not([type=\"hidden\"]):not([type=\"submit\"])').forEach(function (i) {\n          if (i.name && i.value && i.value.trim()) fields[i.name] = { value: i.value.trim(), type: i.type };\n        });\n        form.querySelectorAll('textarea').forEach(function (t) {\n          if (t.name && t.value && t.value.trim()) fields[t.name] = { value: t.value.trim(), type: 'textarea' };\n        });\n        form.querySelectorAll('select').forEach(function (s) {\n          if (s.name && s.value && s.value.trim()) fields[s.name] = { value: s.value.trim(), type: 'select' };\n        });\n        var btnText = form.querySelector('.button-text p, .button-text');\n        return {\n          fields: fields,\n          entire_url: window.location.href,\n          form_cta: btnText ? btnText.textContent.trim() : '',\n          platform: 'ghl_inline',\n          position: state.position,\n          index: state.index\n        };\n      }\n      function fireSuccess() {\n        if (state.successFired || state.failedFired) return;\n        state.successFired = true;\n        var d = collect();\n        if (Object.keys(d.fields).length || recall()) {\n          var data = Object.keys(d.fields).length ? d : recall();\n          data._success_fired = true;\n          persist(data);\n          pushEvent('ghl_form_success', data);\n        }\n      }\n      function fireFailed() {\n        if (state.failedFired || state.successFired || !state.hadInput) return;\n        state.failedFired = true;\n        pushEvent('ghl_form_failed', collect());\n      }\n      inputs.forEach(function (input) {\n        ['input', 'blur', 'change'].forEach(function (ev) {\n          input.addEventListener(ev, function () {\n            var d = collect();\n            if (Object.keys(d.fields).length) { state.hadInput = true; persist(d); }\n          });\n        });\n      });\n      var submitBtn = form.querySelector('button[type=\"submit\"], input[type=\"submit\"]');\n      if (submitBtn) {\n        submitBtn.addEventListener('click', function () {\n          state.submitAt = Date.now();\n          persist(collect());\n        });\n      }\n      new MutationObserver(function (mutations) {\n        if (state.successFired || state.failedFired) return;\n        if (!state.submitAt || (Date.now() - state.submitAt) > SUBMIT_WINDOW) return;\n        if (!document.body.contains(form) || form.offsetParent === null) {\n          fireSuccess();\n          return;\n        }\n        for (var i = 0; i < mutations.length; i++) {\n          var added = mutations[i].addedNodes;\n          for (var j = 0; j < added.length; j++) {\n            var n = added[j];\n            if (n.nodeType !== 1 || n === form || form.contains(n)) continue;\n            var cls = (n.className || '') + ' ' + (n.querySelector ? (n.querySelector('*') || {className:''}).className || '' : '');\n            if (/error|invalid|wrong|fail/i.test(cls)) { fireFailed(); return; }\n            fireSuccess();\n            return;\n          }\n        }\n      }).observe(wrap || form.parentNode, { childList: true, subtree: true, attributes: true, attributeFilter: ['style', 'class'] });\n      new MutationObserver(function () {\n        if (state.failedFired || state.successFired || !state.hadInput || !state.submitAt) return;\n        if ((Date.now() - state.submitAt) > SUBMIT_WINDOW) return;\n        var err = (wrap || form).querySelector('[class*=\"error\" i], [class*=\"invalid\" i], [aria-invalid=\"true\"]');\n        if (err && err.offsetParent !== null) fireFailed();\n      }).observe(wrap || form, { childList: true, subtree: true, attributes: true });\n      // pagehide (not beforeunload) — more reliable on mobile Safari + bfcache.\n      // Covers the redirect-on-success scenario where no in-page render happens.\n      window.addEventListener('pagehide', function () {\n        if (state.successFired || state.failedFired) return;\n        if (!state.submitAt || (Date.now() - state.submitAt) > SUBMIT_WINDOW) return;\n        fireSuccess();\n      });\n      attachedAny = true;\n    });\n    if (attachedAny) log('GHL inline:', forms.length, 'form(s) attached');\n    return attachedAny;\n  }\n  // ═══════════════════════════════════════════════════════════════\n// UNBOUNCE HANDLER\n// Success (inline message)  : form removed/hidden OR new content in parent\n// Success (redirect)        : pagehide within window of submit\n// Failure                   : HTML5 invalid event OR error-flagged element\n// ═══════════════════════════════════════════════════════════════\nfunction initUnbounce() {\n  // Find Unbounce forms by their distinctive .lp-pom-form-field children\n  var allForms = document.querySelectorAll('form');\n  var forms = [];\n  for (var i = 0; i < allForms.length; i++) {\n    if (allForms[i].querySelector('.lp-pom-form-field')) forms.push(allForms[i]);\n  }\n  if (!forms.length) return false;\n  var attachedAny = false;\n  forms.forEach(function (form, idx) {\n    if (getState(form)) { attachedAny = true; return; }\n    var inputs = form.querySelectorAll('input:not([type=\"hidden\"]):not([type=\"submit\"]), textarea, select');\n    if (!inputs.length) return;\n    var state = {\n      position: positionFor(idx, forms.length),\n      index: idx + 1,\n      successFired: false,\n      failedFired: false,\n      submitAt: 0,\n      hadInput: false\n    };\n    setState(form, state);\n    function collect() {\n      var fields = {};\n      form.querySelectorAll('input:not([type=\"hidden\"]):not([type=\"submit\"])').forEach(function (i) {\n        if (i.name && i.value && i.value.trim()) {\n          var type = i.type;\n          // Tag descriptive text fields so buildPayload doesn't pull them into ec_name.\n          // (Redundant safety — buildPayload also filters by field-name regex universally,\n          // but this Unbounce-specific tagging is kept as defense-in-depth.)\n          if (type === 'text' && /description|message|comment|note|project|about|bio|subject|how|details|inquiry/i.test(i.name)) {\n            type = 'description';\n          }\n          fields[i.name] = { value: i.value.trim(), type: type };\n        }\n      });\n      form.querySelectorAll('textarea').forEach(function (t) {\n        if (t.name && t.value && t.value.trim()) fields[t.name] = { value: t.value.trim(), type: 'textarea' };\n      });\n      form.querySelectorAll('select').forEach(function (s) {\n        if (s.name && s.value && s.value.trim()) fields[s.name] = { value: s.value.trim(), type: 'select' };\n      });\n      var btn = form.querySelector('button[type=\"submit\"], input[type=\"submit\"]');\n      var label = btn ? (btn.querySelector('.label') || btn) : null;\n      return {\n        fields: fields,\n        entire_url: window.location.href,\n        form_cta: label ? label.textContent.trim() : '',\n        platform: 'unbounce',\n        position: state.position,\n        index: state.index\n      };\n    }\n    function fireSuccess() {\n      if (state.successFired || state.failedFired) return;\n      state.successFired = true;\n      var d = collect();\n      if (Object.keys(d.fields).length || recall()) {\n        var data = Object.keys(d.fields).length ? d : recall();\n        data._success_fired = true;\n        persist(data);\n        pushEvent('unbounce_form_success', data);\n      }\n    }\n    function fireFailed() {\n      if (state.failedFired || state.successFired || !state.hadInput) return;\n      state.failedFired = true;\n      pushEvent('unbounce_form_failed', collect());\n    }\n    // Progressive save\n    inputs.forEach(function (input) {\n      ['input', 'blur', 'change'].forEach(function (ev) {\n        input.addEventListener(ev, function () {\n          var d = collect();\n          if (Object.keys(d.fields).length) { state.hadInput = true; persist(d); }\n        });\n      });\n    });\n    // Submit click — stamp time for pagehide + render-detection correlation\n    var submitBtn = form.querySelector('button[type=\"submit\"], input[type=\"submit\"]');\n    if (submitBtn) {\n      submitBtn.addEventListener('click', function () {\n        state.submitAt = Date.now();\n        persist(collect());\n      });\n    }\n    // HTML5 validation failure — Unbounce uses native required/pattern attributes\n    inputs.forEach(function (input) {\n      input.addEventListener('invalid', function () {\n        if (state.successFired || !state.hadInput) return;\n        // Only treat as failure if user actually submitted recently\n        if (!state.submitAt || (Date.now() - state.submitAt) > 2000) return;\n        fireFailed();\n      });\n    });\n    // Render watcher: form removed/hidden OR new content appears in parent\n    var parent = form.parentNode;\n    new MutationObserver(function (mutations) {\n      if (state.successFired || state.failedFired) return;\n      if (!state.submitAt || (Date.now() - state.submitAt) > SUBMIT_WINDOW) return;\n      if (!document.body.contains(form) || form.offsetParent === null) {\n        fireSuccess();\n        return;\n      }\n      for (var i = 0; i < mutations.length; i++) {\n        var added = mutations[i].addedNodes;\n        for (var j = 0; j < added.length; j++) {\n          var n = added[j];\n          if (n.nodeType !== 1 || n === form || form.contains(n)) continue;\n          var cls = (n.className || '') + ' ' + (n.querySelector ? (n.querySelector('*') || {className:''}).className || '' : '');\n          if (/error|invalid|wrong|fail/i.test(cls)) { fireFailed(); return; }\n          if (/confirmation|success|thank/i.test(cls)) { fireSuccess(); return; }\n          fireSuccess();\n          return;\n        }\n      }\n    }).observe(parent, { childList: true, subtree: true, attributes: true, attributeFilter: ['style', 'class'] });\n    // pagehide — successful redirect scenario (mobile-Safari-friendly vs beforeunload)\n    window.addEventListener('pagehide', function () {\n      if (state.successFired || state.failedFired) return;\n      if (!state.submitAt || (Date.now() - state.submitAt) > SUBMIT_WINDOW) return;\n      fireSuccess();\n    });\n    attachedAny = true;\n  });\n  if (attachedAny) log('Unbounce:', forms.length, 'form(s) attached');\n  return attachedAny;\n}\n\n  // ═══════════════════════════════════════════════════════════════\n  // GHL IFRAME HANDLER\n  // ═══════════════════════════════════════════════════════════════\n  function initGHLIframe() {\n    var iframes = document.querySelectorAll(\n      'iframe[src*=\"leadconnectorhq.com\"], iframe[src*=\"msgsndr.com\"], iframe[src*=\"gohighlevel.com\"]'\n    );\n    if (!iframes.length) return false;\n    iframes.forEach(function (frame, idx) {\n      if (getState(frame)) return;\n      setState(frame, {\n        position: positionFor(idx, iframes.length),\n        index: idx + 1,\n        successFired: false\n      });\n    });\n    // Unmatched-message logger — surfaces silent breakage if GHL changes\n    // their postMessage format. Active only when DEBUG=true.\n    function logUnmatched(reason, data) {\n      log('GHL iframe: ignored message (' + reason + '):', data);\n    }\n    window.addEventListener('message', function (event) {\n      if (!/leadconnectorhq\\.com|msgsndr\\.com|gohighlevel\\.com/.test(event.origin)) return;\n      var source = null;\n      for (var i = 0; i < iframes.length; i++) {\n        if (iframes[i].contentWindow === event.source) { source = iframes[i]; break; }\n      }\n      if (!source) { logUnmatched('source iframe not matched', event.data); return; }\n      var state = getState(source);\n      if (!state || state.successFired) return;\n      var data = event.data;\n      if (!Array.isArray(data)) { logUnmatched('payload not array', data); return; }\n      if (data[0] === 'msgsndr-booking-complete') return;\n      if (typeof data[0] === 'string' && /booking|appointment|calendar/i.test(data[0])) return;\n      if (typeof data[2] !== 'string') { logUnmatched('data[2] not string', data); return; }\n      var parsed;\n      try { parsed = JSON.parse(data[2]); } catch (e) { logUnmatched('data[2] JSON parse failed', data); return; }\n      if (!parsed || typeof parsed !== 'object') { logUnmatched('parsed not object', parsed); return; }\n      var hasIdentifier = parsed.email || parsed.phone || parsed.full_name || parsed.first_name || parsed.name;\n      if (!hasIdentifier) { logUnmatched('no identifier field', parsed); return; }\n      var fields = {};\n      Object.keys(parsed).forEach(function (k) {\n        var v = parsed[k];\n        if (v == null || v === '') return;\n        var sv = (typeof v === 'string') ? v.trim() : String(v);\n        if (!sv) return;\n        var type = /email/i.test(k) ? 'email' : /phone/i.test(k) ? 'tel' : 'text';\n        fields[k] = { value: sv, type: type };\n      });\n      if (!Object.keys(fields).length) { logUnmatched('no usable fields after parse', parsed); return; }\n      state.successFired = true;\n      var payload = {\n        fields: fields,\n        entire_url: window.location.href,\n        form_cta: '',\n        platform: 'ghl_iframe',\n        position: state.position,\n        index: state.index,\n        _success_fired: true\n      };\n      persist(payload);\n      pushEvent('ghl_form_success', payload);\n    });\n    log('GHL iframe:', iframes.length, 'iframe(s) attached');\n    return true;\n  }\n  // ═══════════════════════════════════════════════════════════════\n  // BOOTSTRAP\n  // ═══════════════════════════════════════════════════════════════\n  function runHandlers() {\n  var ran = false;\n  if (hasSwipePages())   ran = initSwipePages()   || ran;\n  if (hasGravityForms()) ran = initGravityForms() || ran;\n  if (hasUnbounce())     ran = initUnbounce()     || ran;\n  if (hasGHLInline())    ran = initGHLInline()    || ran;\n  if (hasGHLIframe())    ran = initGHLIframe()    || ran;\n  return ran;\n}\n  function bootstrap() {\n    // 1. GF postback confirmation render (same URL, wrapper present, no form)\n    if (isGFPostbackConfirmation()) { handleConfirmationPage(); return; }\n    // 2. Thank-you URL fallback — works for ANY platform with stored data\n    //    Safe because stored data has TTL — direct visits with no recent\n    //    submission won't have data to fire\n    if (isThankYouUrl()) {\n      var stored = recall();\n      if (stored && !stored._success_fired) {\n        handleConfirmationPage();\n        // Don't return — thank-you page may have its own forms (site-wide top/footer)\n        // that we still want to attach to in case user submits again\n      }\n    }\n    // 3. Attach platform handlers\n    if (runHandlers()) return;\n    // 4. Poll for late-rendered forms\n    var tries = 0;\n    var poll = setInterval(function () {\n      if (runHandlers() || ++tries >= 40) clearInterval(poll);\n    }, 300);\n    // 5. MutationObserver for dynamically injected forms\n    new MutationObserver(function () { runHandlers(); })\n      .observe(document.body, { childList: true, subtree: true });\n  }\n  document.readyState === 'loading'\n    ? document.addEventListener('DOMContentLoaded', bootstrap)\n    : bootstrap();\n})();\n</script>"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "supportDocumentWrite",
+                        "value": "false"
+                    }
+                ],
+                "fingerprint": "1781705803338",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "tagId": "33",
+                "name": "GA4 - page_view",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "page_view"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{Const - GA4 Measurement ID}}"
+                    }
+                ],
+                "fingerprint": "1781706011675",
+                "firingTriggerId": [
+                    "2147479553"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "tagId": "38",
+                "name": "GA4 - generate_lead",
+                "type": "gaawe",
+                "parameter": [
+                    {
+                        "type": "BOOLEAN",
+                        "key": "sendEcommerceData",
+                        "value": "false"
+                    },
+                    {
+                        "type": "LIST",
+                        "key": "eventSettingsTable",
+                        "list": [
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "form_cta"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{Dlv - form_cta}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "form_platform"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{Dlv - form_platform}}"
+                                    }
+                                ]
+                            },
+                            {
+                                "type": "MAP",
+                                "map": [
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameter",
+                                        "value": "form_position"
+                                    },
+                                    {
+                                        "type": "TEMPLATE",
+                                        "key": "parameterValue",
+                                        "value": "{{Dlv - form_position}}"
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "eventName",
+                        "value": "generate_lead"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "measurementIdOverride",
+                        "value": "{{Const - GA4 Measurement ID}}"
+                    }
+                ],
+                "fingerprint": "1781706373253",
+                "firingTriggerId": [
+                    "34"
+                ],
+                "tagFiringOption": "ONCE_PER_EVENT",
+                "monitoringMetadata": {
+                    "type": "MAP"
+                },
+                "consentSettings": {
+                    "consentStatus": "NOT_SET"
+                }
+            }
+        ],
+        "trigger": [
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "triggerId": "29",
+                "name": "Pv - url-internal is true",
+                "type": "PAGEVIEW",
+                "filter": [
+                    {
+                        "type": "EQUALS",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{URL – internal}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "true"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1766515045817"
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "triggerId": "34",
+                "name": "CE - ^(swipe|gf|ghl|unbounce)_form_success$",
+                "type": "CUSTOM_EVENT",
+                "customEventFilter": [
+                    {
+                        "type": "MATCH_REGEX",
+                        "parameter": [
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg0",
+                                "value": "{{_event}}"
+                            },
+                            {
+                                "type": "TEMPLATE",
+                                "key": "arg1",
+                                "value": "^(swipe|gf|ghl|unbounce)_form_success$"
+                            }
+                        ]
+                    }
+                ],
+                "fingerprint": "1781706120491"
+            }
+        ],
+        "variable": [
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "variableId": "13",
+                "name": "Const - GA4 Measurement ID",
+                "type": "c",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "value",
+                        "value": "ENTER YOUR MEASUREMENT ID"
+                    }
+                ],
+                "fingerprint": "1766515318618",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "variableId": "27",
+                "name": "URL – internal",
+                "type": "u",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "component",
+                        "value": "QUERY"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "queryKey",
+                        "value": "internal"
+                    }
+                ],
+                "fingerprint": "1766514902222",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "variableId": "28",
+                "name": "JS – internal traffic",
+                "type": "jsm",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "javascript",
+                        "value": "function() {\n  return sessionStorage.getItem('internal_traffic');\n}\n"
+                    }
+                ],
+                "fingerprint": "1766514970873",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "variableId": "35",
+                "name": "Dlv - form_position",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "form_position"
+                    }
+                ],
+                "fingerprint": "1781706278568",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "variableId": "36",
+                "name": "Dlv - form_cta",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "form_cta"
+                    }
+                ],
+                "fingerprint": "1781706304944",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "variableId": "37",
+                "name": "Dlv - form_platform",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "form_platform"
+                    }
+                ],
+                "fingerprint": "1781706332775",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "variableId": "39",
+                "name": "Dlv - ec_name",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ec_name"
+                    }
+                ],
+                "fingerprint": "1782049823604",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "variableId": "40",
+                "name": "Dlv - ec_email",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ec_email"
+                    }
+                ],
+                "fingerprint": "1782049844055",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "variableId": "41",
+                "name": "Dlv - ec_phone",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ec_email"
+                    }
+                ],
+                "fingerprint": "1782049866541",
+                "formatValue": {}
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "variableId": "42",
+                "name": "Upd - EC4L",
+                "type": "awec",
+                "parameter": [
+                    {
+                        "type": "TEMPLATE",
+                        "key": "mode",
+                        "value": "MANUAL"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "phone_number",
+                        "value": "{{Dlv - ec_phone}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "email",
+                        "value": "{{Dlv - ec_email}}"
+                    }
+                ],
+                "fingerprint": "1782050079630",
+                "formatValue": {}
+            }
+        ],
+        "builtInVariable": [
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "type": "PAGE_URL",
+                "name": "Page URL"
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "type": "PAGE_HOSTNAME",
+                "name": "Page Hostname"
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "type": "PAGE_PATH",
+                "name": "Page Path"
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "type": "REFERRER",
+                "name": "Referrer"
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "type": "EVENT",
+                "name": "Event"
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "type": "CLICK_ELEMENT",
+                "name": "Click Element"
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "type": "CLICK_CLASSES",
+                "name": "Click Classes"
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "type": "CLICK_ID",
+                "name": "Click ID"
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "type": "CLICK_TARGET",
+                "name": "Click Target"
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "type": "CLICK_URL",
+                "name": "Click URL"
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "type": "CLICK_TEXT",
+                "name": "Click Text"
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "type": "FORM_CLASSES",
+                "name": "Form Classes"
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "type": "FORM_ID",
+                "name": "Form ID"
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "type": "FORM_TARGET",
+                "name": "Form Target"
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "type": "FORM_TEXT",
+                "name": "Form Text"
+            },
+            {
+                "accountId": "6207473352",
+                "containerId": "172127387",
+                "type": "SCROLL_DEPTH_THRESHOLD",
+                "name": "Scroll Depth Threshold"
+            }
+        ],
+        "fingerprint": "1782053140130",
+        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6207473352/containers/172127387/versions/0?apiLink=version"
+    }
+}
