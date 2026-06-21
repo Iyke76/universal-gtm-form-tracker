@@ -44,7 +44,7 @@ The fix in theory is simple: listen for the confirmation render. The fix in prac
 ### Option B: Drop the script into your own GTM tag
 
 1. Create a **Custom HTML** tag in GTM
-2. Paste the contents of [`universal-form-tracking.js`](./universal-form-tracking.js) wrapped in `<script>` tags
+2. Paste the contents of [`universal-form-tracking.js`](universal-form-tracking-v2.js) wrapped in `<script>` tags
 3. Trigger on **All Pages — Page View** (or Consent Initialization if using a CMP)
 4. Configure your GA4 / Meta CAPI / sGTM tags to listen for the events listed below
 
