@@ -183,7 +183,7 @@ The script lives in a single IIFE. On page load it:
 
 The hardest dedupe case — Gravity Forms AJAX success **plus** redirect to a thank-you URL — is handled by a `_success_fired` flag persisted with the form data. Thank-you page bootstrap checks the flag before firing. One success per submission, always.
 
-For the full architectural walkthrough including code excerpts, see the [Medium deep dive](#) *(link your published Medium URL here)*.
+For the full architectural walkthrough including code excerpts, see the [Medium deep dive](#) *(https://medium.com/@abeliyke/the-universal-gtm-form-tracker-that-doesnt-exist-yet-swipe-unbounce-gravity-and-gohighlevel-b3d8dfa432c7)*.
 
 ---
 
