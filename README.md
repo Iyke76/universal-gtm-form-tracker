@@ -228,7 +228,7 @@ For substantive changes, please open an issue first, describing the approach.
 
 This script exists because of public work by:
 
-- **[Chloe Christine](https://www.linkedin.com/in/chloechristineuk/)** — whose LinkedIn post on form tracking miscount was the springboard
+- **[Chloe Christine](https://www.linkedin.com/in/chloe-christine-allerton/)** — whose LinkedIn post on form tracking miscount was the springboard
 - **[Simo Ahava](https://www.simoahava.com/)** — whose decade of writing on the GTM Form Submission trigger shaped the philosophy
 - **[Julius Fedorovicius](https://www.analyticsmania.com/)** — whose platform-specific tutorials informed every detection signal here
 - Charles Farina, Lukas Oldenburg, Brian Clifton, Markus Baersch, Krista Seiden — for the broader measurement-quality conversation, this work sits inside
