@@ -1,5 +1,9 @@
 # Changelog
 
+## Name field fix (2026-11-06)
+
+A Squarespace Name field keyed its parts as "Name First" and "Name Last", which the classifier did not recognise, so `ec_first_name` and `ec_last_name` came through empty on a real form. They are now keyed "Name First Name" and "Name Last Name". Found in a browser test on a live Squarespace form, with the submission request stubbed so no lead was sent.
+
 ## Container file fix (2026-11-05)
 
 Tracker code is unchanged. Fixes in `universal-gtm-form-tracker.json` only:
