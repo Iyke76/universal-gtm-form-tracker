@@ -1,5 +1,14 @@
 # Changelog
 
+## Container file fix (2026-11-05)
+
+Tracker code is unchanged. Fixes in `universal-gtm-form-tracker.json` only:
+
+- `Dlv - ec_phone` now reads `ec_phone`. It was reading `ec_email`.
+- Removed the leftover `cHTML - Consent Init` test tag. It set `pii: false`, which stripped name, email and phone from every event. If you imported the file earlier, delete that tag and fix the variable.
+- User-Provided Data now maps name and address fields as well as email and phone.
+- Removed the old container name and IDs.
+
 ## 3.3.0 (2026-10-28)
 
 - New platforms: Elementor Pro, Kartra, WPForms, Squarespace, Contact Form 7 (nine total)

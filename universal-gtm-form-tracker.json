@@ -2,21 +2,21 @@
     "exportFormatVersion": 2,
     "exportTime": "2026-06-21 14:45:40",
     "containerVersion": {
-        "path": "accounts/6207473352/containers/172127387/versions/0",
-        "accountId": "6207473352",
-        "containerId": "172127387",
+        "path": "accounts/0/containers/0/versions/0",
+        "accountId": "0",
+        "containerId": "0",
         "containerVersionId": "0",
         "container": {
-            "path": "accounts/6207473352/containers/172127387",
-            "accountId": "6207473352",
-            "containerId": "172127387",
-            "name": "Teaching - Demo 2",
-            "publicId": "GTM-PCGQDNNF",
+            "path": "accounts/0/containers/0",
+            "accountId": "0",
+            "containerId": "0",
+            "name": "Universal GTM Form Tracker",
+            "publicId": "GTM-XXXXXXX",
             "usageContext": [
                 "WEB"
             ],
             "fingerprint": "1766515281900",
-            "tagManagerUrl": "https://tagmanager.google.com/#/container/accounts/6207473352/containers/172127387/workspaces?apiLink=container",
+            "tagManagerUrl": "",
             "features": {
                 "supportUserPermissions": true,
                 "supportEnvironments": true,
@@ -34,13 +34,13 @@
                 "supportTransformations": false
             },
             "tagIds": [
-                "GTM-PCGQDNNF"
+                "GTM-XXXXXXX"
             ]
         },
         "tag": [
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "tagId": "26",
                 "name": "cHTML - Set Internal Traffic",
                 "type": "html",
@@ -69,8 +69,8 @@
                 }
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "tagId": "30",
                 "name": "GA4 - Config",
                 "type": "googtag",
@@ -136,38 +136,8 @@
                 }
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
-                "tagId": "31",
-                "name": "cHTML - Consent Init",
-                "type": "html",
-                "parameter": [
-                    {
-                        "type": "TEMPLATE",
-                        "key": "html",
-                        "value": "<script>\n  window.EC_FORM_CONSENT_CHECK = function() {\n    return { analytics: true, pii: false };  // test config\n  };\n</script>"
-                    },
-                    {
-                        "type": "BOOLEAN",
-                        "key": "supportDocumentWrite",
-                        "value": "false"
-                    }
-                ],
-                "fingerprint": "1781704029423",
-                "firingTriggerId": [
-                    "2147479572"
-                ],
-                "tagFiringOption": "ONCE_PER_EVENT",
-                "monitoringMetadata": {
-                    "type": "MAP"
-                },
-                "consentSettings": {
-                    "consentStatus": "NOT_SET"
-                }
-            },
-            {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "tagId": "32",
                 "name": "cHTML - Universal Form Listener v3.3.0",
                 "type": "html",
@@ -196,8 +166,8 @@
                 }
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "tagId": "33",
                 "name": "GA4 - page_view",
                 "type": "gaawe",
@@ -231,8 +201,8 @@
                 }
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "tagId": "38",
                 "name": "GA4 - generate_lead",
                 "type": "gaawe",
@@ -319,8 +289,8 @@
         ],
         "trigger": [
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "triggerId": "29",
                 "name": "Pv - url-internal is true",
                 "type": "PAGEVIEW",
@@ -344,8 +314,8 @@
                 "fingerprint": "1766515045817"
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "triggerId": "34",
                 "name": "CE - ^(swipe|gf|unbounce|elementor|ghl|kartra|wpforms|squarespace|cf7)_form_success$",
                 "type": "CUSTOM_EVENT",
@@ -371,8 +341,8 @@
         ],
         "variable": [
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "variableId": "13",
                 "name": "Const - GA4 Measurement ID",
                 "type": "c",
@@ -387,8 +357,8 @@
                 "formatValue": {}
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "variableId": "27",
                 "name": "URL – internal",
                 "type": "u",
@@ -408,8 +378,8 @@
                 "formatValue": {}
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "variableId": "28",
                 "name": "JS – internal traffic",
                 "type": "jsm",
@@ -424,8 +394,8 @@
                 "formatValue": {}
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "variableId": "35",
                 "name": "Dlv - form_position",
                 "type": "v",
@@ -450,8 +420,8 @@
                 "formatValue": {}
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "variableId": "36",
                 "name": "Dlv - form_cta",
                 "type": "v",
@@ -476,8 +446,8 @@
                 "formatValue": {}
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "variableId": "37",
                 "name": "Dlv - form_platform",
                 "type": "v",
@@ -502,8 +472,8 @@
                 "formatValue": {}
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "variableId": "39",
                 "name": "Dlv - ec_name",
                 "type": "v",
@@ -528,8 +498,8 @@
                 "formatValue": {}
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "variableId": "40",
                 "name": "Dlv - ec_email",
                 "type": "v",
@@ -554,8 +524,8 @@
                 "formatValue": {}
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "variableId": "41",
                 "name": "Dlv - ec_phone",
                 "type": "v",
@@ -573,15 +543,15 @@
                     {
                         "type": "TEMPLATE",
                         "key": "name",
-                        "value": "ec_email"
+                        "value": "ec_phone"
                     }
                 ],
                 "fingerprint": "1782049866541",
                 "formatValue": {}
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "variableId": "42",
                 "name": "Upd - EC4L",
                 "type": "awec",
@@ -600,111 +570,329 @@
                         "type": "TEMPLATE",
                         "key": "email",
                         "value": "{{Dlv - ec_email}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "first_name",
+                        "value": "{{Dlv - ec_first_name}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "last_name",
+                        "value": "{{Dlv - ec_last_name}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "street",
+                        "value": "{{Dlv - ec_street}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "city",
+                        "value": "{{Dlv - ec_city}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "region",
+                        "value": "{{Dlv - ec_region}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "postal_code",
+                        "value": "{{Dlv - ec_postal_code}}"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "country",
+                        "value": "{{Dlv - ec_country}}"
                     }
                 ],
                 "fingerprint": "1782050079630",
                 "formatValue": {}
+            },
+            {
+                "accountId": "0",
+                "containerId": "0",
+                "variableId": "43",
+                "name": "Dlv - ec_first_name",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ec_first_name"
+                    }
+                ],
+                "formatValue": {},
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "0",
+                "containerId": "0",
+                "variableId": "44",
+                "name": "Dlv - ec_last_name",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ec_last_name"
+                    }
+                ],
+                "formatValue": {},
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "0",
+                "containerId": "0",
+                "variableId": "45",
+                "name": "Dlv - ec_street",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ec_street"
+                    }
+                ],
+                "formatValue": {},
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "0",
+                "containerId": "0",
+                "variableId": "46",
+                "name": "Dlv - ec_city",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ec_city"
+                    }
+                ],
+                "formatValue": {},
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "0",
+                "containerId": "0",
+                "variableId": "47",
+                "name": "Dlv - ec_region",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ec_region"
+                    }
+                ],
+                "formatValue": {},
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "0",
+                "containerId": "0",
+                "variableId": "48",
+                "name": "Dlv - ec_postal_code",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ec_postal_code"
+                    }
+                ],
+                "formatValue": {},
+                "fingerprint": "0"
+            },
+            {
+                "accountId": "0",
+                "containerId": "0",
+                "variableId": "49",
+                "name": "Dlv - ec_country",
+                "type": "v",
+                "parameter": [
+                    {
+                        "type": "INTEGER",
+                        "key": "dataLayerVersion",
+                        "value": "2"
+                    },
+                    {
+                        "type": "BOOLEAN",
+                        "key": "setDefaultValue",
+                        "value": "false"
+                    },
+                    {
+                        "type": "TEMPLATE",
+                        "key": "name",
+                        "value": "ec_country"
+                    }
+                ],
+                "formatValue": {},
+                "fingerprint": "0"
             }
         ],
         "builtInVariable": [
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "type": "PAGE_URL",
                 "name": "Page URL"
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "type": "PAGE_HOSTNAME",
                 "name": "Page Hostname"
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "type": "PAGE_PATH",
                 "name": "Page Path"
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "type": "REFERRER",
                 "name": "Referrer"
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "type": "EVENT",
                 "name": "Event"
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "type": "CLICK_ELEMENT",
                 "name": "Click Element"
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "type": "CLICK_CLASSES",
                 "name": "Click Classes"
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "type": "CLICK_ID",
                 "name": "Click ID"
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "type": "CLICK_TARGET",
                 "name": "Click Target"
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "type": "CLICK_URL",
                 "name": "Click URL"
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "type": "CLICK_TEXT",
                 "name": "Click Text"
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "type": "FORM_CLASSES",
                 "name": "Form Classes"
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "type": "FORM_ID",
                 "name": "Form ID"
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "type": "FORM_TARGET",
                 "name": "Form Target"
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "type": "FORM_TEXT",
                 "name": "Form Text"
             },
             {
-                "accountId": "6207473352",
-                "containerId": "172127387",
+                "accountId": "0",
+                "containerId": "0",
                 "type": "SCROLL_DEPTH_THRESHOLD",
                 "name": "Scroll Depth Threshold"
             }
         ],
         "fingerprint": "1782053140130",
-        "tagManagerUrl": "https://tagmanager.google.com/#/versions/accounts/6207473352/containers/172127387/versions/0?apiLink=version"
+        "tagManagerUrl": "",
+        "name": "Universal GTM Form Tracker v3.3.0"
     }
 }
