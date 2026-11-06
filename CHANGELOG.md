@@ -1,5 +1,9 @@
 # Changelog
 
+## GoHighLevel failure fix (2026-11-06)
+
+`ghl_form_failed` could stay silent on a native form because the check only looked at the first element with an error class, and that element could be hidden. It now looks for any visible error with text. Found on a live GoHighLevel form.
+
 ## Name field fix (2026-11-06)
 
 A Squarespace Name field keyed its parts as "Name First" and "Name Last", which the classifier did not recognise, so `ec_first_name` and `ec_last_name` came through empty on a real form. They are now keyed "Name First Name" and "Name Last Name". Found in a browser test on a live Squarespace form, with the submission request stubbed so no lead was sent.
