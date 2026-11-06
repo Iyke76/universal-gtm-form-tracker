@@ -1,7 +1,7 @@
 {
  "title": "How to Track Every Form in GTM With One Listener, Across Nine Platforms",
  "intro": "<p>The agency I work with usually builds a landing page for a client's Google or Facebook ads, unless the client insists on using their own website. That sounds simple until you open the container. The main site might run GoHighLevel, Gravity Forms or Unbounce, while the landing page sits on SwipePages.</p><p>So one account had two form platforms, and that meant two listeners to install, update and check, across a lot of accounts. I got tired of it and put them into one script.</p><p>This is how that script works and how I set it up, told in the order you'd do it, with a real anonymised container as the example. That container has a Squarespace main site, a SwipePages landing page and one tag covering both. Along the way is the mistake that passes every test and still leaves Enhanced Conversions with nothing to send.</p>",
- "tldr": "<p>Import the free container, or paste one Custom HTML tag, and it detects which form platform is on the page. One regex trigger catches every real confirmation across nine platforms. Send that to GA4, split Google Ads by hostname if you run a landing page, map the contact fields to User-Provided Data, then test that <code>ec_email</code> is actually filled in, as well as that the event fired.</p>",
+ "tldr": "<p>This one free script counts real form submissions across nine form tools, not just button clicks. It also gives Google Ads the lead's contact details, which helps match leads to your ads. You install it once in Google Tag Manager, then send one test lead to confirm the details come through.</p>",
  "sections": [
   [
    "What's already out there",
