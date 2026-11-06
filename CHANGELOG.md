@@ -1,5 +1,9 @@
 # Changelog
 
+## GoHighLevel submit timing (2026-11-06)
+
+The submit click is now stamped in the capture phase, so a validation error rendered during the same click is seen and fires `ghl_form_failed`. Retested on a live form.
+
 ## GoHighLevel failure fix (2026-11-06)
 
 `ghl_form_failed` could stay silent on a native form because the check only looked at the first element with an error class, and that element could be hidden. It now looks for any visible error with text. Found on a live GoHighLevel form.
